@@ -6,7 +6,7 @@ x-casaos:
   author: zinngar
   category: Utility
   description:
-    en_us: "A lightweight standalone dashboard designed to easily open any web link in full screen on the Tesla web browser using the YouTube redirect exploit."
+    en_us: "A standalone web dashboard designed to easily open external web links in full screen on the Tesla web browser using the YouTube redirect exploit."
   developer: zinngar
   icon: "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/car.svg"
   tagline:
@@ -16,9 +16,7 @@ x-casaos:
 
 services:
   teslafullscreen:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: zinngar/teslafullscreen:latest
     container_name: teslafullscreen_app
     ports:
       - "8097:8097"
