@@ -1,11 +1,11 @@
 services:
-  tesla-fullscreen:
+  teslafullscreen:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: tesla_fullscreen_app
+    container_name: teslafullscreen_app
     ports:
-      - "8097:5000"
+      - "8097:8097"
     volumes:
       - ./data:/app/data
     restart: unless-stopped
