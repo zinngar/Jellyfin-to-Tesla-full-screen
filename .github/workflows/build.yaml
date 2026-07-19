@@ -1,4 +1,4 @@
-name: '🏗️ Build Plugin'
+name: '🏗️ Build Docker Image'
 
 on:
   push:
@@ -14,5 +14,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  call:
-    uses: jellyfin/jellyfin-meta-plugins/.github/workflows/build.yaml@master
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build Docker Image
+        run: |
+          docker build -t teslafullscreen:latest .
